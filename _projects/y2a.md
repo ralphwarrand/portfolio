@@ -7,155 +7,104 @@ tags: ["Graphics Programming", "Engine Architecture", "Team Collaboration"]
 
 ## Overview
 
-During this block, I focused on exploring graphics programming concepts and working as part of a programming team on a Retro 3D Shooter project. This was my first deep dive into graphics programming fundamentals and engine architecture design.
+[cite_start]This project, undertaken as part of the International Game Architecture and Design (IGAD) program at Breda University of Applied Sciences, focused on exploring the role of a graphics programmer within a team developing a retro 3D shooter engine.  [cite_start]The primary goal was to create a custom engine from the ground up, capable of running on both PC and PlayStation 4, with a special emphasis on learning the intricacies of graphics systems and cross-platform development.
 
-**Key Focus Areas:** Graphics Programming, Engine Architecture, Team Collaboration
+**Key Focus Areas:**
+* [cite_start]**Graphics Programming:** Gaining hands-on experience with graphics APIs and implementing rendering systems.
+* [cite_start]**Engine Architecture:** Designing and building a robust, multi-platform game engine.
+* [cite_start]**Team Collaboration:** Working effectively in a programmer-only team and communicating technical concepts.
+* [cite_start]**Cross-Platform Development:** Tackling the challenges of developing for both Windows and PlayStation 4.
 
 ## Current State of Competency
 
-I think I have come a long way from when I initially started at BUas, having no C++ experience at all. I think my strong suite might be my communication with other programmers as well as my communication within a multi-disciplinary team. I think I still need to find out what I want to specialise in and for this block I aim to try working as a graphics programmer as the maths and concepts that go into it interest me a lot. I do feel more confident as a programmer in general, but I know that I still have a lot of learning to do to hone my skills in order to write good code. Other than that I know that organisation is not my strong suite and I have tried in previous blocks to improve upon that, so I hope that this block will give me further opportunities to improve my organisational skills, so that I am more reliable when I transition into working in the industry.
+[cite_start]At the start of this block, I had grown more confident in my general programming abilities since starting at BUas with no C++ experience.  [cite_start]I identified my strengths in communication within both programming-specific and multi-disciplinary teams.  [cite_start]However, I recognized that my organizational skills needed improvement and I aimed to become more reliable for future industry work.  [cite_start]My main goal for this block was to delve into graphics programming, as the mathematical concepts and visual results greatly interested me.
 
 ## Learning Goals
 
-Academic and professional practice  
-Goal 01: I want to improve my work-life balance.S: I want to make sure that I don't have a burn-out by working only within assigned hours unlike last block where there were many instances where work dragged out outside of working hours.M: I can measure the amount of hours I work over-time each week and try to decrease that number if possible.A: This goal should be attainable, as it simply requires me to set a hard stopping point for myself when needed.R: It is relevant to me since I need to make sure that I don't make the same mistakes of over-working myself as I did last block.T: It will be bound to the end of this block.
+I set the following SMART goals to guide my development throughout the block:
 
-	
-Professional skills and knowledge
-Goal 01: I want to explore what it is like to be a graphics programmer in a team.S:  I will specifically be focusing on learning the basis of knowledge needed in order to implement common and custom systems in projects as a graphics programmer.M: I am planning to work on a small side project on self-study times in order to create a small demo project of various common rendering subsystems from scratch in either DX12 or opengl.A: If I work on it during self-study time there should be plenty of time to finish this side project through which I will learn relevant skills for my goal.R: It is relevant as it will allow me to explore the skills needed to work in a team as a graphics programmer.T: It is bound to the end of the block.
+* [cite_start]**Academic and Professional Practice Goal:** To improve my work-life balance by strictly adhering to assigned working hours and avoiding the overwork that occurred in the previous block.  [cite_start]I planned to measure my overtime hours weekly and actively work to reduce them.
+* [cite_start]**Professional Skills and Knowledge Goal:** To explore the role of a graphics programmer by learning the foundational knowledge required for implementing rendering systems.  [cite_start]I planned to achieve this by creating a small demo project from scratch using either DirectX 12 or OpenGL during my self-study time.
 
 ## Weekly Progress Highlights
 
-Progress Report	Must be updated every week
-Students report what they have done each week. It shows in-progress work, provides links to the work, and summarizes the feedback on progress made. 
-Section C – Summary of ILO evidence	Must be completed in week 8
-Students summarize their evidence for each of the Intended Learning Outcomes of this block, and self-assess based on the provided detailed rubric.
-Section D – Block Reflection		Must be completed in week 8
-Students reflect on their progress during the block, and set learning goals going forward. 
+### Week 1: Team Formation and Initial Brainstorming
+[cite_start]I was excited to be assigned to the Retro 3D shooter team.  [cite_start]A significant portion of the week was dedicated to brainstorming and planning the engine architecture with the team, which proved to be a draining but necessary process.  [cite_start]I also created a simple raycast renderer as a personal exercise inspired by the project.
 
+![Brainstorming engine architecture on a whiteboard](assets/images/Y2A_W1_Brainstorm.png)
+[cite_start]*Initial brainstorming session for the engine architecture.*
 
-Section A
-Plan
-A
+![Draft of engine architecture on a whiteboard](assets/images/Y2A_W1_Engine_Draft.png)
+*Early draft of the engine's architecture on a whiteboard.*
 
+### Week 2: Refining Engine Architecture and TDD
+[cite_start]Our team made significant progress in outlining the engine's systems.  [cite_start]I learned more about the PS4's architecture, which helped in making our Technical Design Document (TDD) more relevant to our target platform.  We presented our initial engine design this week.
 
-Current state of competency
-Current state of competency
-I think I have come a long way from when I initially started at BUas, having no C++ experience at all. I think my strong suite might be my communication with other programmers as well as my communication within a multi-disciplinary team. I think I still need to find out what I want to specialise in and for this block I aim to try working as a graphics programmer as the maths and concepts that go into it interest me a lot. I do feel more confident as a programmer in general, but I know that I still have a lot of learning to do to hone my skills in order to write good code. Other than that I know that organisation is not my strong suite and I have tried in previous blocks to improve upon that, so I hope that this block will give me further opportunities to improve my organisational skills, so that I am more reliable when I transition into working in the industry.
-A
+![Initial UML Diagram of the Game Engine](assets/images/Y2A_W2_Engine_UML_Initial.png)
+[cite_start]*An early UML diagram showing the core components of the engine.*
 
+![Final UML Diagram of the Game Engine](assets/images/Y2A_W2_Engine_UML_Final.png)
+[cite_start]*The more detailed and final UML class diagram for our engine architecture.*
 
+### Week 3: Project Setup and The Forge Integration
+[cite_start]We successfully integrated "The Forge," a rendering framework, into our project.  [cite_start]A challenge this week was waiting for access to the PS4 version of the framework and our Perforce repository, which highlighted the importance of a solid initial project setup.  [cite_start]I also set up the FSL shader translation pipeline.
 
-SMART goals
-Academic and professional practice  
-Goal 01: I want to improve my work-life balance.S: I want to make sure that I don't have a burn-out by working only within assigned hours unlike last block where there were many instances where work dragged out outside of working hours.M: I can measure the amount of hours I work over-time each week and try to decrease that number if possible.A: This goal should be attainable, as it simply requires me to set a hard stopping point for myself when needed.R: It is relevant to me since I need to make sure that I don't make the same mistakes of over-working myself as I did last block.T: It will be bound to the end of this block.
+![Shader Translation Output](assets/images/Y2A_W3_Shader_Translation.png)
+[cite_start]*Screenshot of the successful shader translation process.*
 
-	
-Professional skills and knowledge
-Goal 01: I want to explore what it is like to be a graphics programmer in a team.S:  I will specifically be focusing on learning the basis of knowledge needed in order to implement common and custom systems in projects as a graphics programmer.M: I am planning to work on a small side project on self-study times in order to create a small demo project of various common rendering subsystems from scratch in either DX12 or opengl.A: If I work on it during self-study time there should be plenty of time to finish this side project through which I will learn relevant skills for my goal.R: It is relevant as it will allow me to explore the skills needed to work in a team as a graphics programmer.T: It is bound to the end of the block.
-	
-A
+### Week 4: Getting the Project Running on PS4
+[cite_start]A major milestone was getting our project to run on the PlayStation 4 for the first time.  I created an actor class and a model resource container. [cite_start]Feedback from our presentation indicated we needed to provide more concrete evidence of our progress and be mindful of project scope.
 
-Review this if you need some help with SMART goal setting: https://thinkmarketingmagazine.com/how-to-create-smart-goals/
+<video controls>
+  <source src="assets/videos/Y2A_W4_PS4_Running.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+[cite_start]*Video showing the project running on a PS4 for the first time.*
 
+### Week 5: Asset Pipeline and JSON System
+[cite_start]I implemented a system to load model resources from JSON files, which involved a significant restructuring of our asset folder.  [cite_start]This week reinforced the lesson that asset pipelines and folder structures should be established early in development.
 
-Section B
-Weekly Progress
-Report
-B
+![Asset Folder Structure](assets/images/Y2A_W5_Asset_Structure.png)
+*The restructured assets folder, including JSON files for actors and models.*
 
+![JSON Code Snippet](assets/images/Y2A_W5_JSON_Code.png)
+*Example of the JSON structure for defining actors and models.*
 
-### Week 1
+### Week 6: Bug Fixing and Camera Rework
+[cite_start]This week was dedicated to fixing numerous small but time-consuming issues, such as shader problems on the PS4 and default input bindings.  [cite_start]I also reworked the camera system, moving control to the player and adding cursor locking for the Windows build.
 
+<video controls>
+  <source src="assets/videos/Y2A_W6_Cursor_Lock.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+*Demonstration of the cursor locking feature and updated camera movement.*
 
-What went well? I got assigned to the Retro 3D shooter team which is a project I am highly enthusiastic about and I got to know my teammates, who all seem quite capable. 
-What didn’t go so well? On thursday we spent a large majority of the day working on engine architecture together in a planning room together which was incredibly draining since we kept going in circles where one of us would challenge a given aspect of the engine design and we would have to justify every part that was challenged.
-What did you learn? I learned that working in a team of only programmers is very different from working in a multi-disciplinary team like last block since there is already a great deal of technical understanding that everyone has, so we can communicate about technical details more effectively.
-Action points?I need to think more about how we can avoid going in circles in meetings, but I am not quite sure how to, so I will perhaps have to do some research into meeting structures.
-What did I do this week
+### Week 7: Fixing the PS4 Build and Cross-Platform Challenges
+[cite_start]I spent this week fixing issues that had broken the PlayStation 4 build, which were primarily related to texture loading.  [cite_start]This was a challenging week as I was unwell, but it provided a deep dive into the complexities of cross-platform development and hardware differences.
 
-Monday
-Created a simple raycast renderer because the project brief inspired me
-Tuesday
-Kick-off
-Got assigned to Retro 3D shooter team
-Wednesday
-Brainstorming with team
-Researching rendering systems (the forge and Jeremiah's framework)
-Set up Trello
-Started adding information to TTD
-Thursday
-Worked on engine architecture with team
-Researched basics of design patterns and anti-patterns
-Friday
-Played a bit with the Forge framework to get a basic understanding of how it works
-Worked on personal side projects
+![Project Running on PS4 Again](assets/images/Y2A_W7_PS4_Fixed.png)
+[cite_start]*The project is up and running on the PS4 again after resolving texture issues.*
 
-### Week 2
-
-
-What went well? I feel like our team made a lot of progress outlining our engine and the systems that we want to implement.
-What didn’t go so well? There are some elements of the TTD which I think we still need to flesh out more, so we possibly still need to work on it next week.
-What did you learn? I learned more about the PS4 architecture since we finally got access to the SDK and we were able to use that information to make our TTD more relevant to the target platform.
-Action points?TTD needs further work to be at a higher standard.
-What did I do this week
-
-Monday
-More work with team on engine architecture
-Tuesday
-Reading foundations of game engine development volume 2
-Working on TTD and describing graphical subsystems of engine
-Wednesday
-Discussion with other graphics programmer about engine architecture and integration of graphical subsystems
-Slight rework of engine architecture.
-Thursday
-Preparing our presentation of engine
-Presenting our engine
-Friday
-Work on side projects
-CPP guild
-
-### Week 3
-
-
-What went well? We got the forge added into our project without any major issues. We expected this to not take as long as it did, but luckily we got it working as we wanted to.
-What didn’t go so well? We had to wait a decent amount of time to get access to the PS4 version of the forge as well as waiting for our perforce repo to be setup so we could start working.
-What did you learn? I learned that project setup should be much more of a focus since a solid setup won't need to be adjusted as much throughout development
-Action points?I plan to focus way more on project setup on the next project that I work on since having a solid setup in mind means that there won't be as many spontaneous changes.
-What did I do this week
-
-Monday
-Testing building the forge from static lib
-Waiting for perforce repo
-Tuesday
-Added the forge to our project
-Changing project setup to use shared headers from same forge version
-Tried to get the project running on PS4
-Wednesday
-Setup FSL shader translation
-Created camera
-Thursday
-Fixed shader translation by adding python translation tools
-Added shaders to project to test translation
-Friday
-Worked on side project exploring raycast renderer
+### Week 8: Final Presentation and Reflection
+[cite_start]The final week was focused on completing the Intended Learning Outcomes (ILOs) and preparing for the final team presentation.  [cite_start]The feedback confirmed that we had over-scoped the project, a key lesson for future endeavors.
 
 ## Block Reflection
 
-Must be completed in week 8
-Students reflect on their progress during the block, and set learning goals going forward.
+This block was a significant learning experience. [cite_start]I am proud that our team created a 3D game engine in just eight weeks and that I was the primary person responsible for the PS4 implementation.  [cite_start]One of the biggest challenges was working with "The Forge" framework due to its limited documentation.
+
+The most important lesson I learned was the danger of over-scoping. [cite_start]In the future, I will advocate for creating a smaller, more polished experience first and then building upon it.  [cite_start]I also learned the critical importance of detailed planning in the initial stages of a project to avoid on-the-fly decision-making.  [cite_start]While I enjoyed my role as a Graphics Programmer, I also found myself heavily involved in gameplay and engine programming, and I am still exploring which specialization I enjoy the most.
 
 ## Technical Skills Developed
 
-- **Programming Languages**: C++, C#
-- **Graphics APIs**: DirectX 12, OpenGL
-- **Tools & Frameworks**: Custom engine development, The Forge framework
-- **Methodologies**: Agile development, SMART goal setting
-- **Collaboration**: Multi-disciplinary team work, technical communication
+-   **Programming Languages**: C++
+-   **Graphics APIs**: DirectX 12, PSSL (PlayStation Shader Language)
+-   **Tools & Frameworks**: The Forge, Perforce, Visual Studio
+-   **Methodologies**: Agile development, SMART goal setting, Technical Design Document (TDD) creation
+-   **Collaboration**: Multi-disciplinary teamwork, Discord for communication, technical documentation
 
 ## Key Takeaways
 
-This block provided valuable experience in graphics programming, engine architecture, team collaboration, contributing to my growth as a game developer and preparing me for industry challenges.
+This block provided valuable experience in graphics programming, engine architecture, and team collaboration. It was a challenging but rewarding journey that significantly contributed to my growth as a game developer and better prepared me for the complexities of the industry. The hands-on experience with cross-platform development for the PS4 was particularly invaluable.
 
 ---
 

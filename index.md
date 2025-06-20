@@ -7,7 +7,7 @@ title: Home
   <div class="wrapper">
     <div class="hero-content">
       <h1 class="hero-title">Ralph Warrand</h1>
-      <p class="hero-subtitle">Creative Media & Game Technologies Student | Graphics Programming Enthusiast | Building the Future of Interactive Entertainment</p>
+      <p class="hero-subtitle">Creative Media & Game Technologies Graduate | MSc Computer Science and Engineering Student |  Building the Future of Interactive Entertainment</p>
       <a href="#projects" class="hero-cta">
         <span>Explore My Journey</span>
         <span>↓</span>
@@ -25,15 +25,15 @@ title: Home
 
     <h3>My Focus Areas</h3>
     <ul>
-      <li><strong>Graphics Programming</strong>: DirectX 12, OpenGL, shader development</li>
+      <li><strong>Graphics Programming</strong>: OpenGL, shader development</li>
       <li><strong>Game Engines</strong>: Unity, Unreal Engine, custom engine development</li>
-      <li><strong>Programming Languages</strong>: C++, C#, HLSL</li>
-      <li><strong>Specializations</strong>: Rendering systems, game architecture, performance optimization</li>
+      <li><strong>Programming Languages</strong>: C++, Python, Java, GLSL, HLSL</li>
+      <li><strong>Specializations</strong>: Game engine architecture, gameplay programming, and graphics programming</li>
     </ul>
 
     <section id="projects" class="projects-section">
       <h2 class="section-title">My Learning Journey</h2>
-      <p class="section-subtitle">Explore my projects and learning outcomes from Year 2 at Breda University of Applied Sciences</p>
+      <p class="section-subtitle">Explore my projects and learning outcomes from my time at Breda University of Applied Sciences and Eindhoven University of Technology</p>
       
       <div class="projects-grid">
         {%- for project in site.projects reversed -%}

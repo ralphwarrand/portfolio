@@ -1,9 +1,9 @@
 # Site settings
 title: Ralph Warrand - Game Developer Portfolio
-email: contact@ralphwarrand.dev
+email: ralphwarrand@gmail.com
 description: >-
   Portfolio showcasing my journey as a Creative Media and Game Technologies student
-  at Breda University of Applied Sciences.
+  at Breda University of Applied Sciences and beyond.
 baseurl: "/portfolio"
 url: "https://ralphwarrand.github.io"
 
