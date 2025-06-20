@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Contact
+permalink: /contact/
 ---
 
 <div class="page-content">
@@ -328,7 +329,6 @@ title: Contact
 }
 
 .interest-item p {
-  color: var(--text-secondary);
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
