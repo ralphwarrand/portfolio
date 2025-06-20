@@ -31,47 +31,47 @@ To guide my progress, I established the following SMART goals:
 ### Week 1: Team Formation and Initial Brainstorming
 I was thrilled to join the Retro 3D shooter team. We dedicated a significant amount of time to brainstorming and planning our engine's architecture. Although intense, this foundational work was crucial. As a personal warm-up, I was inspired to create a simple raycast renderer.
 
-![Brainstorming engine architecture on a whiteboard](assets/images/Y2A_W1_Brainstorm.png)
+![Brainstorming engine architecture on a whiteboard](../assets/images/Y2A_W1_Brainstorm.png)
 *Initial brainstorming session for the engine architecture.*
 
-![Draft of engine architecture on a whiteboard](assets/images/Y2A_W1_Engine_Draft.jpg)
+![Draft of engine architecture on a whiteboard](../assets/images/Y2A_W1_Engine_Draft.jpg)
 *Early draft of the engine's architecture on a whiteboard.*
 
 ### Week 2: Refining Engine Architecture and TDD
 Our team made excellent progress in detailing the engine's systems. I took a deep dive into the PS4's architecture, which allowed us to make our Technical Design Document (TDD) much more relevant to our target platform. We concluded the week by presenting our initial engine design.
 
-![Initial UML Diagram of the Game Engine](assets/images/Y2A_W2_Engine_UML_Initial.png)
+![Initial UML Diagram of the Game Engine](../assets/images/Y2A_W2_Engine_UML_Initial.png)
 *An early UML diagram showing the core components of the engine.*
 
-![Final UML Diagram of the Game Engine](assets/images/Y2A_W2_Engine_UML_Final.png)
+![Final UML Diagram of the Game Engine](../assets/images/Y2A_W2_Engine_UML_Final.png)
 *The more detailed and final UML class diagram for our engine architecture.*
 
 ### Week 3: Project Setup and The Forge Integration
 We successfully integrated "The Forge," a rendering framework, into our project. This week highlighted the importance of a streamlined project setup, as we faced delays waiting for access to the PS4 version of the framework and our Perforce repository. I also established the shader translation pipeline for our project.
 
-![Shader Translation Output](assets/images/Y2A_W3_Shader_Translation.png)
+![Shader Translation Output](../assets/images/Y2A_W3_Shader_Translation.png)
 *Screenshot of the successful shader translation process.*
 
 ### Week 4: Getting the Project Running on PS4
 This week marked a major milestone: we got our project running on a PlayStation 4 for the first time. My contributions included creating an actor class and a model resource container. Feedback from our sprint review reminded us to provide more tangible proof of our progress and to remain mindful of our project's scope.
 
-![Shader Translation Output](assets/images/Y2A_W4_Running_PS4.png)
+![Shader Translation Output](../assets/images/Y2A_W4_Running_PS4.png)
 *Video showing the project running on a PS4 for the first time.*
 
 ### Week 5: Asset Pipeline and JSON System
 I implemented a system to load model resources from JSON files, which required a significant but necessary overhaul of our asset folder structure. This experience served as a powerful reminder that asset pipelines should be thoughtfully designed early in the development process.
 
-![Asset Folder Structure](assets/images/Y2A_W5_Asset_Structure.png)
-*The restructured assets folder, including JSON files for actors and models.*
+![Asset Folder Structure](../assets/images/Y2A_W5_Asset_Structure.png)
+*The restructured ../assets folder, including JSON files for actors and models.*
 
-![JSON Code Snippet](assets/images/Y2A_W5_JSON_Code.png)
+![JSON Code Snippet](../assets/images/Y2A_W5_JSON_Code.png)
 *Example of the JSON structure for defining actors and models.*
 
 ### Week 6: Bug Fixing and Camera Rework
 This week was a whirlwind of fixing small yet time-consuming issues, from shader bugs on the PS4 to incorrect input bindings. I also reworked the camera system, transferring control to the player and implementing cursor locking for a better user experience on Windows.
 
 <video controls>
-  <source src="assets/videos/Y2A_W6_Cursor_Lock.gif" type="video/gif">
+  <source src="../assets/videos/Y2A_W6_Cursor_Lock.gif" type="video/gif">
   Your browser does not support the video tag.
 </video>
 *Demonstration of the cursor locking feature and updated camera movement.*
@@ -79,7 +79,7 @@ This week was a whirlwind of fixing small yet time-consuming issues, from shader
 ### Week 7: Fixing the PS4 Build and Cross-Platform Challenges
 I dedicated this week to resolving issues that had broken the PlayStation 4 build, which were mainly tied to texture loading. Despite feeling unwell, it was a valuable opportunity to learn about the complexities of cross-platform development and hardware-specific quirks.
 
-![Project Running on PS4 Again](assets/images/Y2A_W7_PS4_Fixed.png)
+![Project Running on PS4 Again](../assets/images/Y2A_W7_PS4_Fixed.png)
 *The project is up and running on the PS4 again after resolving texture issues.*
 
 ### Week 8: Final Presentation and Reflection
