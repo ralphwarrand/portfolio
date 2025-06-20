@@ -19,17 +19,17 @@ title: Home
 <div class="page-content">
   <div class="wrapper">
     
-    ## About Me
+    <h2>About Me</h2>
 
-    I'm passionate about **game development**, with a particular interest in **graphics programming**. Throughout my studies at **Breda University of Applied Sciences**, I've been exploring various aspects of game development, from programming fundamentals to advanced rendering techniques.
+    <p>I'm passionate about <strong>game development</strong>, with a particular interest in <strong>graphics programming</strong>. Throughout my studies at <strong>Breda University of Applied Sciences</strong>, I've been exploring various aspects of game development, from programming fundamentals to advanced rendering techniques.</p>
 
-    ### My Focus Areas
-    - **Graphics Programming**: DirectX 12, OpenGL, shader development
-    - **Game Engines**: Unity, Unreal Engine, custom engine development  
-    - **Programming Languages**: C++, C#, HLSL
-    - **Specializations**: Rendering systems, game architecture, performance optimization
-
-    ---
+    <h3>My Focus Areas</h3>
+    <ul>
+      <li><strong>Graphics Programming</strong>: DirectX 12, OpenGL, shader development</li>
+      <li><strong>Game Engines</strong>: Unity, Unreal Engine, custom engine development</li>
+      <li><strong>Programming Languages</strong>: C++, C#, HLSL</li>
+      <li><strong>Specializations</strong>: Rendering systems, game architecture, performance optimization</li>
+    </ul>
 
     <section id="projects" class="projects-section">
       <h2 class="section-title">My Learning Journey</h2>
@@ -55,7 +55,8 @@ title: Home
     <section class="cta-section">
       <h2>Let's Connect</h2>
       <p>Interested in my work or want to collaborate? I'd love to hear from you!</p>
-      <a href="{{ '/contact/' | relative_url }}" class="cta-button">
+      <a href="{{ 
+'/contact/' | relative_url }}" class="cta-button">
         <span>Get In Touch</span>
         <span>✉️</span>
       </a>
