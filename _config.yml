@@ -17,7 +17,7 @@ plugins:
 collections:
   projects:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:name/
 
 # Defaults
 defaults:
