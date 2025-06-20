@@ -2,129 +2,236 @@
 layout: default
 ---
 
-<article class="project">
-  <header class="project-header">
-    <h1 class="project-title">{{ page.title }}</h1>
-    {% if page.period %}
-      <p class="project-period">{{ page.period }}</p>
-    {% endif %}
-    {% if page.tags %}
-      <div class="project-tags">
-        {% for tag in page.tags %}
-          <span class="tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </header>
+<div class="page-content">
+  <div class="wrapper">
+    
+    <article class="project-detail">
+      <header class="project-header">
+        <h1 class="project-title">{{ page.title }}</h1>
+        <p class="project-period">{{ page.period }}</p>
+        
+        {% if page.tags %}
+        <div class="project-tags">
+          {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </header>
 
-  <div class="project-content">
-    {{ content }}
+      <div class="project-content">
+        {{ content }}
+      </div>
+
+      <footer class="project-footer">
+        <a href="{{ "/" | relative_url }}" class="back-link">← Back to Portfolio</a>
+        <div class="project-nav">
+          {% assign projects = site.projects | sort: 'date' %}
+          {% for project in projects %}
+            {% if project.url == page.url %}
+              {% assign current_index = forloop.index0 %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if current_index > 0 %}
+            {% assign prev_project = projects[current_index | minus: 1] %}
+            <a href="{{ prev_project.url | relative_url }}" class="nav-link prev-project">
+              <span>← Previous</span>
+              <span>{{ prev_project.title | truncate: 30 }}</span>
+            </a>
+          {% endif %}
+          
+          {% if current_index < projects.size | minus: 1 %}
+            {% assign next_project = projects[current_index | plus: 1] %}
+            <a href="{{ next_project.url | relative_url }}" class="nav-link next-project">
+              <span>Next →</span>
+              <span>{{ next_project.title | truncate: 30 }}</span>
+            </a>
+          {% endif %}
+        </div>
+      </footer>
+    </article>
+
   </div>
-
-  {% if page.gallery %}
-    <div class="project-gallery">
-      <h3>Gallery</h3>
-      <div class="gallery-grid">
-        {% for image in page.gallery %}
-          <img src="{{ image | relative_url }}" alt="Project image" class="gallery-image">
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
-
-  <footer class="project-footer">
-    <a href="{{ '/' | relative_url }}" class="back-link">← Back to Portfolio</a>
-  </footer>
-</article>
+</div>
 
 <style>
-.project {
+.project-detail {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .project-header {
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .project-title {
-  color: #333;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .project-period {
-  color: #666;
-  font-style: italic;
-  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.project-period::before {
+  content: '📅';
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tag {
-  background: #007acc;
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.875rem;
+  gap: 0.75rem;
+  justify-content: center;
 }
 
 .project-content {
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-size: 1.125rem;
+  color: var(--text-primary);
 }
 
 .project-content h2 {
-  color: #333;
-  margin-top: 2rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .project-content h3 {
-  color: #555;
-  margin-top: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+.project-content p {
+  margin-bottom: 1.5rem;
 }
 
-.gallery-image {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.project-content ul, .project-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.project-content li {
+  margin-bottom: 0.5rem;
+}
+
+.project-content strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.project-content blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.project-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border-color);
 }
 
 .back-link {
-  display: inline-block;
-  margin-top: 2rem;
-  color: #007acc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: var(--transition);
 }
 
 .back-link:hover {
-  text-decoration: underline;
+  color: var(--primary-dark);
+  transform: translateX(-4px);
+}
+
+.project-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-link span:first-child {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.nav-link:hover span:first-child {
+  color: white;
+}
+
+.nav-link span:last-child {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.next-project {
+  text-align: right;
 }
 
 @media (max-width: 768px) {
-  .project {
-    padding: 1rem;
+  .project-title {
+    font-size: 2rem;
   }
   
-  .gallery-grid {
+  .project-content {
+    font-size: 1rem;
+  }
+  
+  .project-nav {
     grid-template-columns: 1fr;
+  }
+  
+  .next-project {
+    text-align: left;
   }
 }
 </style>
