@@ -1,0 +1,180 @@
+/* You can add your global styles here */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.site-title {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.site-nav {
+  float: right;
+}
+
+.site-nav .page-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.page-content {
+  padding: 2rem 0;
+}
+
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-heading {
+  color: #fff;
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list a,
+.social-media-list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.projects-section {
+  margin: 3rem 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  border: 1px solid #e1e5e9;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card h3 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.project-card h3 a:hover {
+  color: #007acc;
+}
+
+.project-period {
+  color: #666;
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background: #007acc;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+}
+
+.project-excerpt {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.cta-section {
+  background: #f8f9fa;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin: 3rem 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #007acc;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #005a99;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section {
+    padding: 2rem 1rem;
+  }
+}
+
+

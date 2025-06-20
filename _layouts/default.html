@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="icon" type="image/x-icon" href="{{ "/assets/favicon.ico" | relative_url }}">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="#" class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.609,1.484-1.363,1.484H1.363C0.609,2.969,0,2.305,0,1.484l0,0C0,0.661,0.609,0,1.363,0h15.274 C17.391,0,18,0.661,18,1.484L18,1.484z M18,7.516c0,0.82-0.609,1.484-1.363,1.484H1.363C0.609,9,0,8.335,0,7.516l0,0 c0-0.822,0.609-1.485,1.363-1.485h15.274C17.391,6.031,18,6.693,18,7.516L18,7.516z M18,13.516c0,0.82-0.609,1.484-1.363,1.484H1.363C0.609,15,0,14.336,0,13.516l0,0 c0-0.822,0.609-1.484,1.363-1.484h15.274C17.391,12.031,18,12.693,18,13.516L18,13.516z" />
+          </svg>
+        </a>
+
+        <div class="trigger">
+          <a class="page-link" href="{{ "/" | relative_url }}">Home</a>
+          <a class="page-link" href="{{ "/contact/" | relative_url }}">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <h2 class="footer-heading">{{ site.title }}</h2>
+
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li>{{ site.title | escape }}</li>
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+            {% if site.github_username %}
+            <li>
+              {% include icon-github.html username=site.github_username %}
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+          <p>{{ site.description | escape }}</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+
