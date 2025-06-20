@@ -5,7 +5,7 @@ description: >-
   Portfolio showcasing my journey as a Creative Media and Game Technologies student
   at Breda University of Applied Sciences.
 baseurl: "/portfolio"
-url: ""
+url: "https://ralphwarrand.github.io"
 
 # Build settings
 markdown: kramdown
