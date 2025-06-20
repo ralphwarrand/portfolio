@@ -1,206 +1,97 @@
 # Portfolio Website Maintenance Guide
 
-## Overview
+This guide provides instructions on how to maintain and update your portfolio website, which is hosted on GitHub Pages and built using Jekyll.
 
-This document provides comprehensive instructions for maintaining and updating your GitHub Pages portfolio website. The site is built with Jekyll and automatically deploys from your GitHub repository.
+## 1. Website Overview
 
-## Repository Information
+Your portfolio website showcases your learning journey and projects from Breda University of Applied Sciences. It features:
 
-- **Repository**: https://github.com/ralphwarrand/portfolio
-- **Live Site**: https://ralphwarrand.github.io/portfolio/
-- **Framework**: Jekyll (GitHub Pages compatible)
-- **Theme**: Custom responsive design based on Minima
+- **Live Site**: [https://ralphwarrand.github.io/portfolio/](https://ralphwarrand.github.io/portfolio/)
+- **Repository**: [https://github.com/ralphwarrand/portfolio](https://github.com/ralphwarrand/portfolio)
 
-## Site Structure
+### Key Features:
+- **Modern Design**: Enhanced visual appeal with a clean, responsive layout, improved typography, and a vibrant color scheme.
+- **Hero Section**: An impactful hero section on the homepage to immediately engage visitors.
+- **Project Showcase**: Dynamically generated project cards for each academic block (Y2A, Y2B, Y2C, Y2D), with smooth animations and clear calls to action.
+- **Detailed Project Pages**: Each project has its own dedicated page with comprehensive content extracted from your PowerPoint presentations, including weekly progress highlights, technical skills developed, and key takeaways.
+- **Contact Form**: A dedicated contact page with a functional form (powered by Formspree.io) and links to your professional profiles.
+- **Responsive Design**: Optimized for various devices, ensuring a consistent experience on desktops, tablets, and mobile phones.
+- **Easy Navigation**: Clear header navigation and intuitive project navigation (previous/next project links).
+- **Future-Proof**: Designed for easy expansion to include future academic years and projects.
 
+## 2. Adding New Content (e.g., Year 3 PowerPoints)
+
+The website is structured to easily integrate new content from your PowerPoint presentations. Follow these steps:
+
+### Step 2.1: Place New PowerPoint Files
+Place your new PowerPoint files (e.g., `Y3A.pptx`, `Y3B.pptx`) into the `upload/` directory within your local project environment. If you are working directly in the GitHub repository, you will need to manually extract the content or run the extraction script locally.
+
+### Step 2.2: Run the Extraction Script
+
+I have provided a Python script (`extract_pptx_data.py`) that automates the extraction of text and images from your PowerPoint files and saves them in a structured format. Another script (`create_project_pages.py`) then uses this extracted data to generate new project pages for your Jekyll site.
+
+To run these scripts:
+
+1.  **Ensure Python and `python-pptx` are installed:**
+    ```bash
+    pip install python-pptx
+    ```
+
+2.  **Run the extraction script:**
+    ```bash
+    python3 extract_pptx_data.py
+    ```
+    This will create new directories under `extracted_pptx_data/` for each new PowerPoint, containing `_text.txt` files and `slide_*.png` images.
+
+3.  **Run the project page creation script:**
+    ```bash
+    python3 create_project_pages.py
+    ```
+    This script will:
+    -   Read the extracted text from `extracted_pptx_data/`.
+    -   Generate new Markdown files (`.md`) in the `_projects/` directory for each new academic block (e.g., `_projects/y3a.md`).
+    -   Copy the extracted images from `extracted_pptx_data/` to `assets/images/`.
+
+    **Important**: The `create_project_pages.py` script is designed to be run whenever you add new PowerPoint files. It will automatically create or update the corresponding project pages and copy the images.
+
+### Step 2.3: Update `_config.yml` (if necessary)
+
+If you introduce new categories or need to adjust the site-wide settings, you might need to modify `_config.yml`. For new project blocks, the `create_project_pages.py` script handles the necessary data for the project cards.
+
+### Step 2.4: Review and Commit Changes
+
+After running the scripts, review the newly generated Markdown files and copied images. Ensure everything looks correct. Then, commit and push your changes to the GitHub repository:
+
+```bash
+git add .
+git commit -m "Add Year 3 content and update portfolio"
+git push origin main
 ```
-portfolio/
-├── _config.yml          # Site configuration
-├── _layouts/            # Page templates
-│   ├── home.html       # Homepage layout
-│   └── project.html    # Project page layout
-├── _projects/          # Project pages (Year 2 blocks)
-│   ├── y2a.md         # Year 2 Block A
-│   ├── y2b.md         # Year 2 Block B
-│   ├── y2c.md         # Year 2 Block C
-│   └── y2d.md         # Year 2 Block D
-├── assets/images/      # All extracted images
-├── contact.md          # Contact page
-├── index.md           # Homepage content
-├── Gemfile            # Ruby dependencies
-└── README.md          # This documentation
-```
 
-## Adding New Year/Block Content
+GitHub Pages will automatically rebuild and deploy your site with the new content.
 
-### Method 1: Using PowerPoint Extraction (Recommended)
+## 3. Customizing the Design
 
-1. **Prepare your PowerPoint files**
-   - Save your learning logs as `.pptx` files
-   - Name them consistently (e.g., `Y3A.pptx`, `Y3B.pptx`)
+All styling is managed in `assets/main.css`. You can modify this file to change the look and feel of your website.
 
-2. **Extract content using the provided script**
-   ```bash
-   # Update the script with new file paths
-   python3 extract_pptx_data.py
-   ```
+### Key CSS Variables:
 
-3. **Generate new project pages**
-   ```bash
-   # Update the script to include new blocks
-   python3 create_project_pages.py
-   ```
+Open `assets/main.css` and look for the `:root` selector at the top. Here you can adjust:
 
-4. **Copy images to assets**
-   ```bash
-   cp extracted_pptx_data/Y3A/*.png assets/images/
-   cp extracted_pptx_data/Y3A/*.jpg assets/images/
-   ```
+-   `--primary-color`, `--secondary-color`, `--accent-color`: For main brand colors.
+-   `--text-primary`, `--text-secondary`, `--text-light`: For text colors.
+-   `--bg-primary`, `--bg-secondary`, `--bg-dark`: For background colors.
+-   `--border-color`, `--shadow-sm`, `--shadow-md`, `--shadow-lg`, `--shadow-xl`: For borders and shadows.
+-   `--border-radius`: For rounded corners.
+-   `--transition`: For animation smoothness.
 
-### Method 2: Manual Creation
+### Layouts:
 
-1. **Create a new project file**
-   - Create `_projects/y3a.md` (or appropriate name)
-   - Use the existing project files as templates
+-   `_layouts/default.html`: The base layout for all pages, including header and footer.
+-   `_layouts/home.html`: The layout for the homepage, including the hero section and project grid.
+-   `_layouts/project.html`: The layout for individual project pages.
 
-2. **Follow the front matter format**
-   ```yaml
-   ---
-   layout: project
-   title: "Year 3 Block A - [Your Focus Area]"
-   period: "[Start Date] - [End Date]"
-   tags: ["Tag1", "Tag2", "Tag3"]
-   ---
-   ```
+### Homepage (`index.md`):
 
-3. **Add your content using Markdown**
-   - Use the same structure as existing projects
-   - Include sections for Overview, Goals, Progress, Reflection
-
-## Updating Existing Content
-
-1. **Edit project files directly**
-   - Navigate to `_projects/` folder
-   - Edit the relevant `.md` file
-   - Use Markdown syntax for formatting
-
-2. **Add new images**
-   - Upload images to `assets/images/` folder
-   - Reference them in your content: `![Description]({{ '/assets/images/filename.png' | relative_url }})`
-
-3. **Update contact information**
-   - Edit `contact.md` to update your details
-   - Modify `_config.yml` for site-wide information
-
-## Deployment Process
-
-The site automatically deploys when you push changes to the `main` branch:
-
-1. **Make your changes locally or via GitHub web interface**
-
-2. **Commit and push changes**
-   ```bash
-   git add .
-   git commit -m "Add Year 3 content"
-   git push origin main
-   ```
-
-3. **GitHub Pages will automatically rebuild**
-   - Usually takes 1-5 minutes
-   - Check the Actions tab for build status
-
-## Customization Options
-
-### Changing Colors and Styling
-
-1. **Edit the CSS in layout files**
-   - Modify `_layouts/home.html` for homepage styling
-   - Modify `_layouts/project.html` for project page styling
-
-2. **Update site configuration**
-   - Edit `_config.yml` for site title, description, etc.
-
-### Adding New Page Types
-
-1. **Create new layout in `_layouts/`**
-2. **Create content files using the new layout**
-3. **Add navigation links if needed**
-
-## Troubleshooting
-
-### Site Not Loading
-- Check GitHub Pages settings in repository settings
-- Verify the site is enabled and building from `main` branch
-- Check the Actions tab for build errors
-
-### Images Not Displaying
-- Ensure images are in `assets/images/` folder
-- Use relative URLs: `{{ '/assets/images/filename.png' | relative_url }}`
-- Check file extensions match exactly
-
-### Layout Issues
-- Validate your Markdown syntax
-- Check front matter formatting (YAML)
-- Ensure proper indentation in YAML
-
-## Best Practices
-
-1. **Consistent Naming**
-   - Use lowercase for file names
-   - Use hyphens instead of spaces
-   - Follow existing naming conventions
-
-2. **Image Optimization**
-   - Compress large images before uploading
-   - Use appropriate formats (PNG for screenshots, JPG for photos)
-   - Consider file size limits (GitHub recommends <50MB per file)
-
-3. **Content Organization**
-   - Keep project files focused and concise
-   - Use clear headings and sections
-   - Include relevant tags for categorization
-
-4. **Regular Updates**
-   - Update content regularly as you progress
-   - Keep contact information current
-   - Archive or reorganize old content as needed
-
-## Future Enhancements
-
-Consider these improvements for your portfolio:
-
-1. **Blog Section**
-   - Add `_posts/` folder for blog entries
-   - Create blog layout and index page
-
-2. **Project Galleries**
-   - Implement image galleries for projects
-   - Add lightbox functionality for images
-
-3. **Search Functionality**
-   - Add search capability for projects
-   - Implement tag-based filtering
-
-4. **Analytics**
-   - Add Google Analytics for visitor tracking
-   - Monitor popular content and pages
-
-## Support and Resources
-
-- **Jekyll Documentation**: https://jekyllrb.com/docs/
-- **GitHub Pages Documentation**: https://docs.github.com/en/pages
-- **Markdown Guide**: https://www.markdownguide.org/
-- **YAML Syntax**: https://yaml.org/spec/1.2/spec.html
-
-## Contact for Technical Issues
-
-If you encounter technical issues with the site:
-1. Check the GitHub repository's Issues tab
-2. Review GitHub Pages build logs
-3. Consult Jekyll documentation
-4. Consider reaching out to web development communities
-
----
-
-*This documentation was created as part of your portfolio setup. Keep it updated as you make changes to your site structure or workflow.*
+-   The `index.md` file contains the content for your homepage, including the 
 
