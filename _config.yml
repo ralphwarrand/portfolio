@@ -4,7 +4,7 @@ email: contact@ralphwarrand.dev
 description: >-
   Portfolio showcasing my journey as a Creative Media and Game Technologies student
   at Breda University of Applied Sciences.
-baseurl: ""
+baseurl: "/portfolio"
 url: ""
 
 # Build settings
