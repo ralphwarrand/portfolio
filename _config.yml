@@ -1,0 +1,39 @@
+# Site settings
+title: Ralph Warrand - Game Developer Portfolio
+email: contact@ralphwarrand.dev
+description: >-
+  Portfolio showcasing my journey as a Creative Media and Game Technologies student
+  at Breda University of Applied Sciences.
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+

@@ -1,0 +1,131 @@
+---
+layout: default
+---
+
+<article class="project">
+  <header class="project-header">
+    <h1 class="project-title">{{ page.title }}</h1>
+    {% if page.period %}
+      <p class="project-period">{{ page.period }}</p>
+    {% endif %}
+    {% if page.tags %}
+      <div class="project-tags">
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  {% if page.gallery %}
+    <div class="project-gallery">
+      <h3>Gallery</h3>
+      <div class="gallery-grid">
+        {% for image in page.gallery %}
+          <img src="{{ image | relative_url }}" alt="Project image" class="gallery-image">
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <footer class="project-footer">
+    <a href="{{ '/' | relative_url }}" class="back-link">← Back to Portfolio</a>
+  </footer>
+</article>
+
+<style>
+.project {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.project-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.project-title {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.project-period {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #007acc;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+.project-content {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.project-content h2 {
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-content h3 {
+  color: #555;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .project {
+    padding: 1rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+

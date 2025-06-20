@@ -1,0 +1,153 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  <section class="projects-section">
+    <h2>My Learning Journey</h2>
+    <p>Explore my projects and learning outcomes from Year 2 at Breda University of Applied Sciences:</p>
+    
+    <div class="projects-grid">
+      {%- for project in site.projects reversed -%}
+        <article class="project-card">
+          <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+          <p class="project-period">{{ project.period }}</p>
+          <div class="project-tags">
+            {%- for tag in project.tags -%}
+              <span class="tag">{{ tag }}</span>
+            {%- endfor -%}
+          </div>
+          <p class="project-excerpt">{{ project.content | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ project.url | relative_url }}" class="read-more">Read More →</a>
+        </article>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Let's Connect</h2>
+    <p>Interested in my work or want to collaborate? I'd love to hear from you!</p>
+    <a href="{{ '/contact/' | relative_url }}" class="cta-button">Get In Touch</a>
+  </section>
+</div>
+
+<style>
+.projects-section {
+  margin: 3rem 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  border: 1px solid #e1e5e9;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card h3 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.project-card h3 a:hover {
+  color: #007acc;
+}
+
+.project-period {
+  color: #666;
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background: #007acc;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+}
+
+.project-excerpt {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.cta-section {
+  background: #f8f9fa;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin: 3rem 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #007acc;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #005a99;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section {
+    padding: 2rem 1rem;
+  }
+}
+</style>
+
